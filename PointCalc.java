@@ -29,6 +29,7 @@ class PointCalc
 	public static void main(String args[])
 	{
 		Scanner sc=new Scanner(System.in);
+		Point pd=new Point();
 		System.out.println("enter x,y values of 1st point");
 		int a=sc.nextInt();
 		int b=sc.nextInt();
