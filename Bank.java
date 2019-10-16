@@ -1,5 +1,5 @@
 import java.util.*;
-class Account
+abstract class Account
 {
 	Scanner sc=new Scanner(System.in);
 	String name,type;
@@ -27,6 +27,12 @@ class Account
 		System.out.println("enter the amount to be withdrawn");
 		double draw=sc.nextDouble();
 		bal=bal-draw;
+	}
+	void interestCal()
+	{
+	}
+	void service()
+	{
 	}
 	
 }
@@ -82,27 +88,24 @@ class Bank
 		Scanner sc=new Scanner(System.in);
 		System.out.println("enter 1 for savings 2 for current account");
 		int ch=sc.nextInt();
-		
+		Account ref;
 		if(ch==1)
 		{
-			Sav_acct ob1=new Sav_acct();
-			ob1.input();
-			ob1.deposit();
-			ob1.withdraw();
-			ob1.interestCal();
-			ob1.display();
-
+			ref=new Sav_acct();
+			
 		}
 		else 
 		{
-			Curr_acct ob2=new Curr_acct();
-			ob2.input();
-			ob2.deposit();
-			ob2.withdraw();
-			ob2.service();
-			ob2.display();
+			ref=new Curr_acct();
+			
 		}
+		ref.input();
+		ref.deposit();
+		ref.withdraw();
+		ref.interestCal();
+		ref.service();
+		ref.display();
+
 		
 	}
 }
-			
